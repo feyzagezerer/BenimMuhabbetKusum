@@ -1,0 +1,34 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Benim Muhabbet Kuşum</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Anasayfa</string>
+    <string name="nav_informations">Bilgiler</string>
+    <string name="nav_about">Hakkında</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">Benim Muhabbet Kuşum</string>
+    <string name="home_daily_info">Bugünün bilgisi :)</string>
+
+    <!-- About Screen -->
+    <string name="about_title">Bize Ulaşabilirsiniz</string>
+    <string name="about_description">Soru, öneri veya istekleriniz için bize yazabilirsiniz.</string>
+    <string name="about_mail">Email</string>
+
+    <!-- Common -->
+    <string name="content_description_refresh">Yenile</string>
+    <string name="content_description_information">Bilgi ikonu</string>
+    <string name="content_description_home">Ana sayfa</string>
+    <string name="content_description_info">Bilgi</string>
+    <string name="content_description_mail">Email</string>
+    <string name="content_description_error">İnternet bağlantı hatası</string>
+    <string name="content_description_arrow">Ok işareti</string>
+
+    <!-- Error Messages -->
+    <string name="error_no_internet">İnternet bağlantısı yok</string>
+    <string name="error_generic">Bir hata oluştu</string>
+
+    <!-- Loading -->
+    <string name="loading">Yükleniyor...</string>
+</resources>
