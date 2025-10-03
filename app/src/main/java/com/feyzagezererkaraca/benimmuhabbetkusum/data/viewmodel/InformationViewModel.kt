@@ -3,6 +3,7 @@ package com.feyzagezererkaraca.benimmuhabbetkusum
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.feyzagezererkaraca.benimmuhabbetkusum.data.models.Food
 import com.feyzagezererkaraca.benimmuhabbetkusum.include.InformationsState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -11,10 +12,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.feyzagezererkaraca.benimmuhabbetkusum.data.models.RandomInformation
 import com.feyzagezererkaraca.benimmuhabbetkusum.data.models.RandomInformationGenerator
+import com.feyzagezererkaraca.benimmuhabbetkusum.data.repository.FoodRepository
 import kotlinx.coroutines.flow.asStateFlow
 
 @HiltViewModel
-class InformationViewModel @Inject constructor(
+class InformationViewModel @Inject constructor( private val foodRepository: FoodRepository
 ) : ViewModel() {
 
     // Rastgele alıntı üreteci
@@ -41,10 +43,22 @@ class InformationViewModel @Inject constructor(
     private val _generatedSortedInformationList = MutableStateFlow<InformationsState<List<RandomInformation>>>(InformationsState.Loading)
     val generatedSortedInformationList: StateFlow<InformationsState<List<RandomInformation>>> = _generatedSortedInformationList.asStateFlow()
 
+    val harmfulFoods = foodRepository.getHarmfulFoods()
+    val beneficialFoods = foodRepository.getBeneficialFoods()
+
+
     init {
         // Başlangıçta rastgele alıntılar oluştur
         fetchGeneratedRandomInformation()
         fetchGeneratedInformationList(20) // 20 alıntı
+    }
+
+    fun filterFoods(foods: List<Food>, query: String): List<Food> {
+        if (query.isEmpty()) return foods
+        return foods.filter { food ->
+            food.name.contains(query, ignoreCase = true) ||
+                    food.description.contains(query, ignoreCase = true)
+        }
     }
     /**
      * Tek bir rastgele alıntı oluşturur

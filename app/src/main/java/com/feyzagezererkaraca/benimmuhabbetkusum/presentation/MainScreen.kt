@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.FoodBank
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.Icon
@@ -34,13 +35,14 @@ import com.feyzagezererkaraca.benimmuhabbetkusum.ui.theme.BenimMuhabbetKusumThem
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.getValue
 import androidx.compose.material3.*
-import androidx.compose.material.icons.filled.FormatQuote
 import androidx.compose.ui.res.stringResource
 import com.feyzagezererkaraca.benimmuhabbetkusum.InformationViewModel
 import com.feyzagezererkaraca.benimmuhabbetkusum.R
 import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.AboutScreen
+import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.BeneficialNutritionDetailScreen
+import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.HarmfulNutritionDetailScreen
 import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.HomeScreen
-import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.InformationScreen
+import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.NutritionScreen
 import com.feyzagezererkaraca.benimmuhabbetkusum.ui.theme.AppColors
 
 @AndroidEntryPoint
@@ -59,7 +61,7 @@ class MainScreen : ComponentActivity() {
                     val backgroundColor by animateColorAsState(
                         targetValue = when (currentDestination?.route) {
                             BottomNavScreens.Home.route -> AppColors.BackgroundHome
-                            BottomNavScreens.Informations.route -> AppColors.BackgroundInformations
+                            BottomNavScreens.Nutrition.route -> AppColors.BackgroundInformations
                             BottomNavScreens.About.route -> AppColors.BackgroundAbout
                             else -> AppColors.BackgroundHome
                         },
@@ -93,8 +95,8 @@ class MainScreen : ComponentActivity() {
                                     )
                                 }
 
-                                composable(BottomNavScreens.Informations.route) {
-                                    InformationScreen(
+                                composable(BottomNavScreens.Nutrition.route) {
+                                    NutritionScreen(
                                         navController = navController,
                                         viewModel = viewModel
                                     )
@@ -102,6 +104,14 @@ class MainScreen : ComponentActivity() {
 
                                 composable(BottomNavScreens.About.route) {
                                     AboutScreen(navController = navController)
+                                }
+
+                                composable("beneficial_nutrition_detail") {
+                                    BeneficialNutritionDetailScreen(navController = navController, viewModel)
+                                }
+
+                                composable("harmful_nutrition_detail") {
+                                    HarmfulNutritionDetailScreen(navController = navController, viewModel)
                                 }
                             }
                         }
@@ -116,14 +126,11 @@ class MainScreen : ComponentActivity() {
  * Bottom navigation ekranları için sealed class
  */
 sealed class BottomNavScreens(val route: String) {
-    object Home : BottomNavScreens("home")
-    object Informations : BottomNavScreens("informations")
-    object About : BottomNavScreens("about")
+    object Home : BottomNavScreens("ana sayfa")
+    object Nutrition : BottomNavScreens("beslenme")
+    object About : BottomNavScreens("hakkında")
 }
 
-/**
- * Alt navigasyon bar'ı
- */
 @Composable
 fun BottomNavigationBar(
     navController: NavHostController,
@@ -131,7 +138,7 @@ fun BottomNavigationBar(
 ) {
     val items = listOf(
         BottomNavScreens.Home,
-        BottomNavScreens.Informations,
+        BottomNavScreens.Nutrition,
         BottomNavScreens.About
     )
 
@@ -149,8 +156,8 @@ fun BottomNavigationBar(
                             tint = AppColors.White
                         )
 
-                        BottomNavScreens.Informations -> Icon(
-                            Icons.Default.FormatQuote,
+                        BottomNavScreens.Nutrition -> Icon(
+                            Icons.Default.FoodBank,
                             contentDescription = stringResource(R.string.content_description_information),
                             tint = AppColors.White
                         )

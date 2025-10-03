@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.hilt.android)
     implementation(libs.volley)
+    implementation(libs.material3)
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
     // Lifecycle

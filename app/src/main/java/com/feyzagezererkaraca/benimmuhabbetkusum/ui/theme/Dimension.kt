@@ -7,6 +7,7 @@ import androidx.compose.ui.unit.sp
 
 object AppDimensions {
     // Padding
+    val PaddingZero: Dp = 0.dp
     val PaddingExtraSmall: Dp = 4.dp
     val PaddingSmall: Dp = 8.dp
     val PaddingMedium: Dp = 16.dp
@@ -17,6 +18,8 @@ object AppDimensions {
     val PaddingScreen: Dp = 16.dp
     val PaddingCard: Dp = 16.dp
     val PaddingRefreshIconTop: Dp = 18.dp
+    val SpacingSmall: Dp = 8.dp
+    val SpacingMedium: Dp = 12.dp
 
     // Icon Sizes
     val IconSizeSmall: Dp = 24.dp
@@ -27,6 +30,12 @@ object AppDimensions {
     val CardHeight: Dp = 250.dp
     val CardPaddingTop: Dp = 16.dp
     val CardPaddingHorizontal: Dp = 16.dp
+
+
+    val CardElevation: Dp = 8.dp
+
+    // Button
+    val ButtonSizeLarge: Dp = 150.dp
 
     // Progress Indicator
     val ProgressIndicatorSize: Dp = 50.dp
@@ -45,4 +54,5 @@ object AppTextSizes {
     val Medium: TextUnit = 18.sp
     val Large: TextUnit = 24.sp
     val ExtraLarge: TextUnit = 30.sp
+    val EmojiSize: TextUnit = 32.sp
 }

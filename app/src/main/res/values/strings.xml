@@ -11,6 +11,27 @@
     <string name="home_title">Benim Muhabbet Kuşum</string>
     <string name="home_daily_info">Bugünün bilgisi :)</string>
 
+    <!-- Nutrition Screen -->
+    <string name="nutrition_title">Beslenme</string>
+    <string name="nutrition_information">Muhabbet kuşları genel olarak meyve, sebze ve tohumlarla beslenir. Kuşunuzu pelet yem ile besliyorsanız bile düzenli olarak meyve, sebze ve tohumlardan vermeniz tavsiye edilir.\n Sebze ve meyveler iyi bir şekilde yıkanmalı, haşlanması gereken sebzeler buharda haşlanmalı. Tohumlar filizlendirilerek de verilebilir.</string>
+    <string name="beneficial_nutrition_button">Faydalı Yiyecekler</string>
+    <string name="harmful_nutrition_button">Zararlı Yiyecekler</string>
+    <string name="beneficial_foods_button">Faydalı Yiyecekler</string>
+    <string name="harmful_foods_button">Zararlı Yiyecekler</string>
+
+    <!-- Beneficial Nutrition Detail Screen -->
+    <string name="beneficial_foods_title">Yararlı Yiyecekler Listesi</string>
+    <string name="beneficial_foods_description">✅ Kuşunuza güvenle verebileceğiniz yiyecekler.</string>
+    <string name="search_placeholder">Ara...</string>
+    <string name="search_icon">Ara</string>
+    <string name="clear_search">Temizle</string>
+    <string name="back_button">Geri</string>
+    <string name="no_results_found">Sonuç bulunamadı</string>
+
+    <!-- Harmful Nutrition Detail Screen -->
+    <string name="harmful_foods_title">Zararlı Yiyecekler Listesi</string>
+    <string name="harmful_foods_warning">⚠️ Lütfen kuşunuzu bu yiyecek ve içeceklerden uzak tutun.</string>
+
     <!-- About Screen -->
     <string name="about_title">Bize Ulaşabilirsiniz</string>
     <string name="about_description">Soru, öneri veya istekleriniz için bize yazabilirsiniz.</string>
