@@ -24,7 +24,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.NavHostController
-import com.feyzagezererkaraca.benimmuhabbetkusum.InformationViewModel
+import com.feyzagezererkaraca.benimmuhabbetkusum.BudgieViewModel
 import com.feyzagezererkaraca.benimmuhabbetkusum.R
 import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.components.RandomGeneratedInformationScreen
 import com.feyzagezererkaraca.benimmuhabbetkusum.ui.theme.AppColors
@@ -33,7 +33,7 @@ import com.feyzagezererkaraca.benimmuhabbetkusum.ui.theme.AppTextSizes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(navController: NavHostController, viewModel: InformationViewModel) {
+fun HomeScreen(navController: NavHostController, viewModel: BudgieViewModel) {
     Scaffold(
         containerColor = AppColors.Transparent,
         topBar = {

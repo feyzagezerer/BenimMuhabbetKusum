@@ -21,7 +21,7 @@
 
     <!-- Beneficial Nutrition Detail Screen -->
     <string name="beneficial_foods_title">Yararlı Yiyecekler Listesi</string>
-    <string name="beneficial_foods_description">✅ Kuşunuza güvenle verebileceğiniz yiyecekler.</string>
+    <string name="beneficial_foods_description">✅  Kuşunuza güvenle verebileceğiniz yiyecekler...</string>
     <string name="search_placeholder">Ara...</string>
     <string name="search_icon">Ara</string>
     <string name="clear_search">Temizle</string>
@@ -32,6 +32,15 @@
     <string name="harmful_foods_title">Zararlı Yiyecekler Listesi</string>
     <string name="harmful_foods_warning">⚠️ Lütfen kuşunuzu bu yiyecek ve içeceklerden uzak tutun.</string>
 
+    <!-- Health Screen -->
+    <string name="health_title">Sağlık ve Bakım</string>
+    <string name="health_diseases">Hastalıklar</string>
+    <string name="health_toys">Oyuncaklar</string>
+    <string name="health_cage_setup">Kafes Düzeni</string>
+    <string name="exercises">Egzersizler</string>
+    <string name="bird_sand">Kuş Kumu/Taşı</string>
+    <string name="navigate_forward">İleri git</string>
+
     <!-- About Screen -->
     <string name="about_title">Bize Ulaşabilirsiniz</string>
     <string name="about_description">Soru, öneri veya istekleriniz için bize yazabilirsiniz.</string>
@@ -39,10 +48,11 @@
 
     <!-- Common -->
     <string name="content_description_refresh">Yenile</string>
-    <string name="content_description_information">Bilgi ikonu</string>
+    <string name="content_description_nutrition">Bilgi ikonu</string>
     <string name="content_description_home">Ana sayfa</string>
     <string name="content_description_info">Bilgi</string>
     <string name="content_description_mail">Email</string>
+    <string name="content_description_health">Sağlık</string>
     <string name="content_description_error">İnternet bağlantı hatası</string>
     <string name="content_description_arrow">Ok işareti</string>
 

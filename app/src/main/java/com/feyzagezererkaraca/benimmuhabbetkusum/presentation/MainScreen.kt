@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.FoodBank
+import androidx.compose.material.icons.filled.HealthAndSafety
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.Icon
@@ -36,18 +37,19 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlin.getValue
 import androidx.compose.material3.*
 import androidx.compose.ui.res.stringResource
-import com.feyzagezererkaraca.benimmuhabbetkusum.InformationViewModel
+import com.feyzagezererkaraca.benimmuhabbetkusum.BudgieViewModel
 import com.feyzagezererkaraca.benimmuhabbetkusum.R
 import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.AboutScreen
 import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.BeneficialNutritionDetailScreen
 import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.HarmfulNutritionDetailScreen
+import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.HealthScreen
 import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.HomeScreen
 import com.feyzagezererkaraca.benimmuhabbetkusum.presentation.screens.NutritionScreen
 import com.feyzagezererkaraca.benimmuhabbetkusum.ui.theme.AppColors
 
 @AndroidEntryPoint
 class MainScreen : ComponentActivity() {
-    private val viewModel: InformationViewModel by viewModels()
+    private val viewModel: BudgieViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +63,8 @@ class MainScreen : ComponentActivity() {
                     val backgroundColor by animateColorAsState(
                         targetValue = when (currentDestination?.route) {
                             BottomNavScreens.Home.route -> AppColors.BackgroundHome
-                            BottomNavScreens.Nutrition.route -> AppColors.BackgroundInformations
+                            BottomNavScreens.Nutrition.route -> AppColors.BackgroundNutrition
+                            BottomNavScreens.Health.route -> AppColors.BackgroundHealth
                             BottomNavScreens.About.route -> AppColors.BackgroundAbout
                             else -> AppColors.BackgroundHome
                         },
@@ -97,21 +100,42 @@ class MainScreen : ComponentActivity() {
 
                                 composable(BottomNavScreens.Nutrition.route) {
                                     NutritionScreen(
-                                        navController = navController,
-                                        viewModel = viewModel
+                                        navController = navController
                                     )
+                                }
+
+                                composable("beneficial_nutrition_detail") {
+                                    BeneficialNutritionDetailScreen(
+                                        navController = navController,
+                                        viewModel
+                                    )
+                                }
+
+                                composable("harmful_nutrition_detail") {
+                                    HarmfulNutritionDetailScreen(
+                                        navController = navController,
+                                        viewModel
+                                    )
+                                }
+                                composable(BottomNavScreens.Health.route) {
+                                    HealthScreen(
+                                        navController = navController
+                                    )
+                                }
+                                composable("diseases_screen") {
+                                    // DiseasesScreen(navController)
+                                }
+
+                                composable("toys_screen") {
+                                    // ToysScreen(navController)
+                                }
+
+                                composable("cage_setup_screen") {
+                                    // CageSetupScreen(navController)
                                 }
 
                                 composable(BottomNavScreens.About.route) {
                                     AboutScreen(navController = navController)
-                                }
-
-                                composable("beneficial_nutrition_detail") {
-                                    BeneficialNutritionDetailScreen(navController = navController, viewModel)
-                                }
-
-                                composable("harmful_nutrition_detail") {
-                                    HarmfulNutritionDetailScreen(navController = navController, viewModel)
                                 }
                             }
                         }
@@ -128,6 +152,7 @@ class MainScreen : ComponentActivity() {
 sealed class BottomNavScreens(val route: String) {
     object Home : BottomNavScreens("ana sayfa")
     object Nutrition : BottomNavScreens("beslenme")
+    object Health : BottomNavScreens("sağlık")
     object About : BottomNavScreens("hakkında")
 }
 
@@ -139,6 +164,7 @@ fun BottomNavigationBar(
     val items = listOf(
         BottomNavScreens.Home,
         BottomNavScreens.Nutrition,
+        BottomNavScreens.Health,
         BottomNavScreens.About
     )
 
@@ -158,7 +184,13 @@ fun BottomNavigationBar(
 
                         BottomNavScreens.Nutrition -> Icon(
                             Icons.Default.FoodBank,
-                            contentDescription = stringResource(R.string.content_description_information),
+                            contentDescription = stringResource(R.string.content_description_nutrition),
+                            tint = AppColors.White
+                        )
+
+                        BottomNavScreens.Health -> Icon(
+                            Icons.Default.HealthAndSafety,
+                            contentDescription = stringResource(R.string.content_description_health),
                             tint = AppColors.White
                         )
 

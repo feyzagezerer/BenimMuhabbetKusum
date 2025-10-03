@@ -31,7 +31,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import com.feyzagezererkaraca.benimmuhabbetkusum.InformationViewModel
+import com.feyzagezererkaraca.benimmuhabbetkusum.BudgieViewModel
 import com.feyzagezererkaraca.benimmuhabbetkusum.R
 import com.feyzagezererkaraca.benimmuhabbetkusum.data.models.RandomInformation
 import com.feyzagezererkaraca.benimmuhabbetkusum.include.InformationsState
@@ -44,7 +44,7 @@ import com.feyzagezererkaraca.benimmuhabbetkusum.ui.theme.AppTextSizes
  * Ana ekranda rastgele bilgi gösteren component
  */
 @Composable
-fun RandomGeneratedInformationScreen(viewModel: InformationViewModel) {
+fun RandomGeneratedInformationScreen(viewModel: BudgieViewModel) {
     val generatedInformationState by viewModel.generatedRandomInformation.collectAsState()
     GeneratedInformationCard(generatedInformationState)
 }

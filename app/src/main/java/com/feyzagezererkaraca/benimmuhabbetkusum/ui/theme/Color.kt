@@ -5,7 +5,8 @@ import androidx.compose.ui.graphics.Color
 object AppColors {
     // Background Colors
     val BackgroundHome = Color(0xFFEBEFEF)
-    val BackgroundInformations = Color(0xFFEBEFEF)
+    val BackgroundNutrition = Color(0xFFEBEFEF)
+    val BackgroundHealth = Color(0xFFEBEFEF)
     val BackgroundAbout = Color(0xFFEBEFEF)
 
     // Navigation Bar
@@ -17,7 +18,7 @@ object AppColors {
 
     // Card Colors
 
-    val CardColor = Color(0xFFCCD0D0)
+    val CardColor = Color(0xFFDEE1E1)
     val CardColorSecondary = Color.White.copy(alpha = 0.9f)
     val CardGradientStart = Color.Gray
     val CardGradientEnd = Color.Magenta

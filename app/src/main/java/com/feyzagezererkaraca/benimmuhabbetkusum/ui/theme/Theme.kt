@@ -17,7 +17,7 @@ private val DarkColorScheme = darkColorScheme(
     secondary = AppColors.CardGradientEnd,
     tertiary = AppColors.NavBarIndicator,
 
-    background = AppColors.BackgroundInformations,
+    background = AppColors.BackgroundNutrition,
     surface = AppColors.BackgroundHome,
 
     onPrimary = AppColors.White,

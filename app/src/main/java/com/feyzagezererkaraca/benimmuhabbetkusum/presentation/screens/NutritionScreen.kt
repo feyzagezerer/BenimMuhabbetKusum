@@ -23,7 +23,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.NavHostController
-import com.feyzagezererkaraca.benimmuhabbetkusum.InformationViewModel
 import com.feyzagezererkaraca.benimmuhabbetkusum.R
 import com.feyzagezererkaraca.benimmuhabbetkusum.ui.theme.AppColors
 import com.feyzagezererkaraca.benimmuhabbetkusum.ui.theme.AppDimensions
@@ -32,7 +31,7 @@ import com.feyzagezererkaraca.benimmuhabbetkusum.ui.theme.AppTextSizes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NutritionScreen(navController: NavHostController, viewModel: InformationViewModel) {
+fun NutritionScreen(navController: NavHostController) {
     Scaffold(
         containerColor = AppColors.Transparent,
         topBar = {

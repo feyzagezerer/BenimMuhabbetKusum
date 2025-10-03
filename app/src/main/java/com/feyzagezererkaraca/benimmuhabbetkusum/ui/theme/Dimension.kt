@@ -23,8 +23,11 @@ object AppDimensions {
 
     // Icon Sizes
     val IconSizeSmall: Dp = 24.dp
-    val IconSizeMedium: Dp = 56.dp
-    val IconSizeLarge: Dp = 100.dp
+    val IconSizeMedium: Dp = 32.dp
+
+    val IconSizeLarge: Dp = 56.dp
+    val IconSizeExtraLarge: Dp = 100.dp
+
 
     // Card Dimensions
     val CardHeight: Dp = 250.dp
@@ -53,6 +56,6 @@ object AppTextSizes {
     val Small: TextUnit = 14.sp
     val Medium: TextUnit = 18.sp
     val Large: TextUnit = 24.sp
-    val ExtraLarge: TextUnit = 30.sp
     val EmojiSize: TextUnit = 32.sp
+    val IconSize: TextUnit = 40.sp
 }

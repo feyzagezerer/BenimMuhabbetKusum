@@ -16,7 +16,7 @@ import com.feyzagezererkaraca.benimmuhabbetkusum.data.repository.FoodRepository
 import kotlinx.coroutines.flow.asStateFlow
 
 @HiltViewModel
-class InformationViewModel @Inject constructor( private val foodRepository: FoodRepository
+class BudgieViewModel @Inject constructor( private val foodRepository: FoodRepository
 ) : ViewModel() {
 
     // Rastgele alıntı üreteci
@@ -48,9 +48,8 @@ class InformationViewModel @Inject constructor( private val foodRepository: Food
 
 
     init {
-        // Başlangıçta rastgele alıntılar oluştur
         fetchGeneratedRandomInformation()
-        fetchGeneratedInformationList(20) // 20 alıntı
+        fetchGeneratedInformationList(20)
     }
 
     fun filterFoods(foods: List<Food>, query: String): List<Food> {
